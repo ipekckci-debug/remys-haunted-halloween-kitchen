@@ -66,8 +66,10 @@ class KitchenScene extends Phaser.Scene {
   create() {
     this.level = LEVELS[this.levelIndex];
     this.levelComplete = false;
+    this.gameEnded = false;
     this.invulnerableUntil = 0;
     this.ghostPausedUntil = 0;
+    this.ghostTween = null;
     this.createTextures();
     this.drawKitchen();
     this.createHUD();
@@ -264,6 +266,7 @@ class KitchenScene extends Phaser.Scene {
   completeLevel() {
     if (this.levelComplete) return;
     this.levelComplete = true;
+    if (this.timerEvent) this.timerEvent.paused = true;
     this.player.body.setVelocity(0, 0);
     this.statusText.setText("Recipe complete! Preparing the next kitchen…");
     this.ghostEvent.remove(false);
@@ -317,7 +320,8 @@ class KitchenScene extends Phaser.Scene {
   }
 
   endGame(won) {
-    if (this.scene.isActive("ResultScene")) return;
+    if (this.gameEnded) return;
+    this.gameEnded = true;
     this.scene.start("ResultScene", { won, score: this.score, level: this.levelIndex + 1 });
   }
 
