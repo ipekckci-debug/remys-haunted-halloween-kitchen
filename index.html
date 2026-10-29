@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17131d">
   <title>Remy's Haunted Halloween Kitchen</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div id="game"></div>
-
+  <main class="game-shell">
+    <div id="game" aria-label="Remy's Haunted Halloween Kitchen game"></div>
+    <p class="credit">A Halloween coding project · built with Phaser 3</p>
+  </main>
   <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.js"></script>
-  <script src="./src/main.js"></script>
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>
