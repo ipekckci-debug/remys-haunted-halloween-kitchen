@@ -1,0 +1,44 @@
+{
+  "name": "remys-haunted-halloween-kitchen",
+  "version": "1.0.0",
+  "description": "Remy's Haunted Halloween Kitchen desktop game",
+  "private": true,
+  "main": "electron-main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --publish never"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.ipekckci.remyshauntedhalloweekitchen",
+    "productName": "Remy's Haunted Halloween Kitchen",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "style.css",
+      "src/**/*",
+      "electron-main.cjs",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
+  }
+}
