@@ -14,7 +14,7 @@
   },
   "build": {
     "appId": "com.ipekckci.remyshauntedhalloweekitchen",
-    "productName": "Remy's Haunted Halloween Kitchen",
+    "productName": "Remys Haunted Halloween Kitchen",
     "directories": {
       "output": "dist"
     },
@@ -26,19 +26,13 @@
       "package.json"
     ],
     "mac": {
-      "target": [
-        "dmg"
-      ]
+      "target": ["dmg"]
     },
     "win": {
-      "target": [
-        "nsis"
-      ]
+      "target": ["nsis"]
     },
     "linux": {
-      "target": [
-        "AppImage"
-      ]
+      "target": ["AppImage"]
     }
   }
 }
